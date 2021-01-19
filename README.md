@@ -7,8 +7,8 @@ Firstly, if you're stuck on something, you can go ask on <a href="https://discor
 You will need a client, you can make it by doing 
 
 ```javascript
-const discord_slash_commands = require('@daimond113/discord-slash-commands')
-const client = new discord_slash_commands('BotToken', 'BotClientID')
+const DiscordSlashCommands = require('@daimond113/discord-slash-commands')
+const client = new DiscordSlashCommands('BotToken', 'BotClientID')
 ```
 
 Now, you can make your commands!
@@ -55,23 +55,26 @@ You can use the same command name to override your old command!
 To delete a command you can use Client.deleteCommand() like this!
 
 
-```javascript
+```javascript 
 client.deleteCommand('command_name', 'optional_guild_id')
 ```
 
 <h2>Handling slash commands</h2>
-If you're using <a href="https://www.npmjs.com/package/discord.js">discord.js</a> you can do 
+If you are using gateway events, the library you are using should handle it.  
+<br />
+If you're using <a href="https://www.npmjs.com/package/discord.js">discord.js</a> you can do  
 
 ```javascript
-const discord = require('discord.js')
-const Client = new discord.Client()
-const discord_slash_commands = require('@daimond113/discord-slash-commands')
-const client = new discord_slash_commands('Token', 'ClientID')
+const { Client } = require('discord.js')
+const DiscordSlashCommands = require('@daimond113/discord-slash-commands')
 
-client.addCommands(...)
+const client = new Client()
+const slashCommandsClient = require('')
 
-Client.ws.on('INTERACTION_CREATE', async (int) => {
-	Client.api.interactions(int.id, int.token).callback.post({
+slashCommandsClient.addCommands(...)
+
+client.ws.on('INTERACTION_CREATE', async (int) => {
+	client.api.interactions(int.id, int.token).callback.post({
 		data: {
 			type: 4,
 			data: {
