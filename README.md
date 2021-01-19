@@ -69,7 +69,7 @@ const { Client } = require('discord.js')
 const DiscordSlashCommands = require('@daimond113/discord-slash-commands')
 
 const client = new Client()
-const slashCommandsClient = new DiscordSlashCommands()
+const slashCommandsClient = new DiscordSlashCommands('BotToken', 'BotClientID')
 
 slashCommandsClient.addCommands(...)
 
