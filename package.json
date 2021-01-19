@@ -1,0 +1,26 @@
+{
+	"name": "@daimond113/discord-slash-commands",
+	"version": "1.0.0",
+	"description": "A package allowing you to use discord's slash commands!",
+	"main": "bot.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/daimond113/discord-slash-commands.git"
+	},
+	"author": "https://github.com/daimond113/",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/daimond113/discord-slash-commands/issues"
+	},
+	"homepage": "https://github.com/daimond113/discord-slash-commands#readme",
+	"dependencies": {
+		"axios": "^0.21.1"
+	},
+	"devDependencies": {
+		"@types/node": "^14.14.21",
+		"typescript": "^4.1.3"
+	}
+}
