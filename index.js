@@ -75,7 +75,7 @@ class Client {
 			.post(url, commandOptions, {
 				headers: headers
 			})
-			.catch((e) => console.log(e.response.data))
+			.catch((e) => console.log(JSON.stringify(e.response.data, null, 2)))
 	}
 	/**		
 	 * @param {string} [guildid]
@@ -102,7 +102,7 @@ class Client {
 			.get(url, {
 				headers: headers
 			})
-			.catch((e) => console.log(e.response.data))
+			.catch((e) => console.log(JSON.stringify(e.response.data, null, 2)))
 		commands.data.forEach(async (element) => {
 			if (element.name === name) {
 				let url2
@@ -115,7 +115,7 @@ class Client {
 					.delete(url2, {
 						headers: headers
 					})
-					.catch((e) => console.log(e.response.data))
+					.catch((e) => console.log(JSON.stringify(e.response.data, null, 2)))
 			}
 		})
 	}

@@ -18,7 +18,7 @@ declare class Client {
       * @property {string} choices.value
      */
     /**
-    * @param { Object[] } commandOptions
+    * @param { Object } commandOptions
     * @param {string} commandOptions.name
     * @param {string} commandOptions.description
     * @param {Array<CommandOption>} [commandOptions.options]
@@ -37,7 +37,7 @@ declare class Client {
                 value: string;
             };
         }[];
-    }[], guildid?: string): Promise<void>;
+    }, guildid?: string): Promise<void>;
     /**
      * @param {string} [guildid]
     * @param {string} name
