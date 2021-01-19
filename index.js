@@ -33,29 +33,31 @@ class Client {
      */
 	async createCommand(commandOptions, guildid) {
 		guildid = guildid || null
+		commandOptions.options = commandOptions.options || null
 		if (typeof commandOptions.name !== 'string') {
 			throw new TypeError('commandOptions.name is not a string!')
 		}
 		if (typeof commandOptions.description !== 'string') {
 			throw new TypeError('commandOptions.description is not a string!')
 		}
-		if (!commandOptions.options instanceof Array) {
-			throw new TypeError('commandOptions.options is not a Array!')
-		}
-		if (typeof commandOptions.options[0].name !== 'string') {
-			throw new TypeError('commandOptions.options.name is not a string!')
-		}
-		if (typeof commandOptions.options[0].description !== 'string') {
-			throw new TypeError('commandOptions.options.description is not a string!')
-		}
-		if (typeof commandOptions.options[0].type !== 'number') {
-			throw new TypeError('commandOptions.options.type is not a number!')
-		}
-		if (typeof commandOptions.options[0].required !== 'boolean') {
-			throw new TypeError('commandOptions.options.required is not a string!')
-		}
-		if (typeof commandOptions.options[0].choices !== 'object') {
-			throw new TypeError('commandOptions.options.description is not a string!')
+		if (Array.isArray(commandOptions.options)) {
+			commandOptions.options.forEach((element) => {
+				if (typeof element.name !== 'string') {
+					throw new TypeError('commandOptions.options.name is not a string!')
+				}
+				if (typeof element.description !== 'string') {
+					throw new TypeError('commandOptions.options.description is not a string!')
+				}
+				if (typeof element.type !== 'number') {
+					throw new TypeError('commandOptions.options.type is not a number!')
+				}
+				if (typeof element.required !== 'boolean') {
+					throw new TypeError('commandOptions.options.required is not a string!')
+				}
+				if (typeof element.choices !== 'object') {
+					throw new TypeError('commandOptions.options.description is not a string!')
+				}
+			})
 		}
 		if (typeof guildid !== 'string' && guildid !== null) {
 			throw new TypeError('guildid is not a string!')
