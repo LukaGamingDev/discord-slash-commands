@@ -2,7 +2,7 @@
 	"name": "@daimond113/discord-slash-commands",
 	"version": "1.0.2",
 	"description": "A package allowing you to use discord's slash commands!",
-	"main": "bot.js",
+	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
