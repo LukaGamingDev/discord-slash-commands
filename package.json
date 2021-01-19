@@ -1,6 +1,6 @@
 {
 	"name": "@daimond113/discord-slash-commands",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A package allowing you to use discord's slash commands!",
 	"main": "bot.js",
 	"scripts": {
